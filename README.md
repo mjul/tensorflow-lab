@@ -5,13 +5,16 @@ Experimenting with Tensorflow.
 
 # Installation
 This project is built for Tensorflow CPU only version running on Python 3.5 on Mac. 
-Create and enter a virtual enviroment and install the required packages:
+Create and enter a virtual enviroment and install the required
+packages.  Note that you should use `venv` with Python 3 to avoid a
+lot of problems. Don't use `virtualenv`.
 
-    virtualenv -p python3 venv-tfpy3
+    python3 -m venv-tfpy3
     . venv-tfpy3/bin/activate
     python -m pip install --upgrade pip
     pip install -r requirements.txt 
 
+Read more in [Matplotlib FAQ](http://matplotlib.org/faq/virtualenv_faq.html#short-version).
 
 ## Troubleshooting
 
