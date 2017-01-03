@@ -10,7 +10,7 @@ from scipy.stats import norm
 import numpy as np
 
 
-def brownian(x0, n, dt, delta, out=None):
+def brownian(x0, n:int, dt, delta, out=None):
     """
     Generate an instance of Brownian motion (i.e. the Wiener process):
 
@@ -69,3 +69,21 @@ def brownian(x0, n, dt, delta, out=None):
     out += np.expand_dims(x0, axis=-1)
 
     return out
+
+
+# Adapted from the NumPy Geometric Brownian Motion function by Yves Hilpisch:
+# https://www.wakari.io/sharing/bundle/yves/Yves_Hilpisch_Python_in_Finance_Talk_NYC?has_login=False
+def geometric_brownian(S0, mu, sigma, dt, num_paths: int, num_steps: int):
+    """
+    :param S0: the initial value
+    :param mu: the percentage drift
+    :param sigma: the percentage volatility
+    :param dt: the time-step (fraction of a year)
+    :param num_paths: the number of paths to generate
+    :param num_steps: the number of steps to generate
+    :return: an array with the paths
+    """
+    S = S0 * np.exp(np.cumsum((mu - 0.5 * sigma ** 2) * dt
+                + sigma * np.sqrt(dt) * np.random.standard_normal((num_steps, num_paths)), axis=0))
+    return S.transpose()
+
