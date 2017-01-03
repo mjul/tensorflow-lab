@@ -7,9 +7,13 @@ Experimenting with Tensorflow.
 This project is built for Tensorflow CPU only version running on Python 3.5 on Mac. 
 Create and enter a virtual enviroment and install the required
 packages.  Note that you should use `venv` with Python 3 to avoid a
-lot of problems. Don't use `virtualenv`.
+lot of problems. Don't use `virtualenv`. 
 
-    python3 -m venv-tfpy3
+Note that the `--copies` argument is only needed to work around 
+[bug PY-21787](https://youtrack.jetbrains.com/issue/PY-21787) in PyCharm: it allows 
+it to find the virtual environment. 
+
+    python3 -m venv venv-tfpy3 --copies
     . venv-tfpy3/bin/activate
     python -m pip install --upgrade pip
     pip install -r requirements.txt 
