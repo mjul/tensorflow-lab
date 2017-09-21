@@ -4,7 +4,7 @@ Experimenting with Tensorflow.
 
 
 # Installation
-This project is built for Tensorflow CPU only version running on Python 3.5 on Mac. 
+This project is built for Tensorflow CPU only version running on Python 3.6 on Mac. 
 Create and enter a virtual enviroment and install the required
 packages.  Note that you should use `venv` with Python 3 to avoid a
 lot of problems. Don't use `virtualenv`. 
